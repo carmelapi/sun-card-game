@@ -1,0 +1,371 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-text);
+}
+
+:root {
+  --color-primary: #ff3b30;
+  --color-text: white;
+  --color-secondary: #02763c;
+  --color-bg: #008844;
+  --color-tertiary: #ffd630;
+}
+
+h3 {
+  color: var(--color-tertiary);
+  margin: 1.5em 0 0.5em;
+}
+
+/* GLOBAL */
+body {
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer {
+  background: var(--color-secondary);
+  border-radius: 76px;
+  padding: 1rem;
+  width: 80%;
+  margin: 0 auto 0 auto;
+  text-align: center;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+button {
+  width: 176px;
+  height: 56px;
+  border-radius: 76px;
+  border: 0;
+  background: var(--color-secondary);
+  font-size: 20px;
+}
+
+button:hover {
+  box-shadow: 0px 7px 6px 0px rgba(0, 98, 40, 0.25) inset;
+}
+
+input {
+  background: none;
+  border: none;
+  height: 56px;
+  padding: 1rem;
+  outline: none;
+}
+
+select {
+  background: none;
+  border: none;
+  margin-right: 1rem;
+  font-size: 24px;
+  outline: none;
+}
+
+/*LAYOUT*/
+.container__main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (max-width: 1300px) {
+  .container__input {
+    width: 75vw;
+    height: 75vh;
+    top: auto;
+    left: auto;
+  }
+}
+
+/* COMPONENTS */
+.container-header {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container-header span {
+  color: var(--color-tertiary);
+}
+
+/* - - - START WINDOW - INPUT SETTINGS - - -  */
+.container__input {
+  background: var(--color-secondary);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  border-radius: 1.5rem;
+  z-index: 7;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.954px 9.54px 9.54px 0px rgba(57, 55, 75, 0.1);
+}
+
+.input-player {
+  border-bottom: 3px solid white;
+  color: #0a4e14;
+  font-weight: 400;
+  font-size: 24px;
+  margin-right: 2rem;
+}
+
+.input-player::placeholder {
+  color: #0a4e14;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.container__input > button {
+  background-color: #006c32;
+  font-size: 20px;
+  width: 140px;
+}
+
+.hide-input {
+  display: none;
+}
+
+/* - - - GAME INFO STYLE - - - */
+.small__container {
+  background: var(--color-secondary);
+  height: 300px;
+  padding: 1rem;
+  float: right;
+  border-radius: 16px;
+  box-shadow: 1.377px 13.774px 13.774px 0px rgba(57, 55, 75, 0.1);
+}
+
+.small__container h2 {
+  border-bottom: var(--color-text) 3px;
+  padding: 0rem 0rem 0.5rem 0.5rem;
+  border-radius: 2px;
+}
+
+.container__gameinfo {
+  width: 200px;
+  overflow-y: hidden;
+}
+
+#game__info {
+  padding: 1rem;
+}
+
+#game__info span {
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.gameInfo-correct {
+  font-weight: 500;
+  color: var(--color-tertiary);
+  padding-bottom: 1rem;
+}
+
+.gameInfo-rounds {
+  padding-bottom: 1rem;
+}
+
+.container__card-score {
+  width: 200px;
+}
+
+/* - - - GAME OVER STYLE - - - */
+.game-over {
+  flex-direction: column;
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+  height: 64vh;
+  width: 80vw;
+  border-radius: 1.5rem;
+  background: var(--color-secondary);
+  font-weight: 400;
+  font-size: 24px;
+  z-index: 100;
+  display: none;
+  box-shadow: 0.954px 9.54px 9.54px 0px rgba(57, 55, 75, 0.1);
+}
+
+.game-over__text,
+h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.score,
+#azimuth,
+#elevation {
+  font-weight: 300;
+  text-align: center;
+}
+
+.restart__button {
+  background-color: var(--color-primary);
+  margin-top: 2rem;
+}
+
+/* - - - CARDS STYLE - - - */
+.container__cards {
+  position: relative;
+  height: 300px;
+  width: 650px;
+}
+
+.card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: none;
+}
+
+.card {
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: translate 250ms linear, transform 500ms ease-out;
+  border-radius: 1.5rem;
+}
+
+.card__front,
+.card__back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-shadow: 1.141px 11.406px 11.406px 0px rgba(57, 55, 75, 0.1);
+}
+
+.card__front {
+  backface-visibility: hidden;
+  border-radius: 1.5rem;
+}
+
+.card__back {
+  transform: rotateY(180deg);
+  backface-visibility: visible;
+  backface-visibility: hidden;
+}
+
+.card--sun .card__front {
+  background-image: url(./img/card__front--sun.svg);
+}
+
+.card--rain .card__front {
+  background-image: url(./img/card__front--rain.svg);
+}
+
+.card--snow .card__front {
+  background-image: url(./img/card__front--snow.svg);
+}
+
+.card--flipped {
+  transform: rotateY(180deg);
+}
+
+/* this class from JS to rotate the card  */
+.flipCard {
+  transform: rotateY(180deg);
+}
+
+.shuffle-in-progress {
+  pointer-events: none;
+}
+
+/* - - - GAMES MAIN BUTTONS STYLE - - - */
+.container__buttons {
+  display: flex;
+  justify-content: center;
+  visibility: hidden;
+}
+.difficulty_button_container {
+  display: flex;
+  width: 40vw;
+  align-self: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.button_difficulty {
+  width: 150px;
+  height: 50px;
+  border-radius: 76px;
+  border: 0;
+  background: var(--color-secondary);
+  font-size: 20px;
+}
+
+.button-start {
+  background: var(--color-primary);
+}
+
+.button-start:hover {
+  box-shadow: 0px 7px 6px 0px rgba(99, 29, 25, 0.25) inset;
+}
+
+.button-off,
+.button-off-difficulty,
+.button-off-difficulty-selected {
+  pointer-events: none;
+  box-shadow: 0px 7px 6px 0px rgba(0, 98, 40, 0.25) inset;
+}
+
+.button-off {
+  color: #d6514a;
+  background-color: #9c3832;
+}
+
+.button-off-difficulty {
+  color: #b5b5b5;
+  background-color: #0f7341;
+}
+
+.button-off-difficulty-selected {
+  color: #b5b5b5;
+  background-color: #0c5b33;
+}
+
+/* - - - LEADERBOARD STYLE - - -  */
+.leaderBoard-li {
+  margin: 0.5rem 0;
+}
+
+.leaderBoard-icon {
+  margin-right: 0.5rem;
+}
+
+.leaderBoard-name {
+  margin-right: 2rem;
+}
+
+.leaderBoard-score {
+  font-weight: 700;
+  float: right;
+}
